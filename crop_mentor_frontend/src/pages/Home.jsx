@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import FarmingAnimation from '../components/FarmingAnimation';
 import { 
   Sprout, 
   DollarSign, 
@@ -56,12 +57,12 @@ const FeatureCard = ({ icon: Icon, title, description, delay = 0, link }) => {
     >
       <Link to={link} className="block">
         <div className="bg-white rounded-2xl shadow-lg p-8 h-full transition-all duration-300 hover:shadow-2xl border border-green-100">
-          <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <div className="w-16 h-16 bg-gradient-to-br from-[#65CCB8] to-[#4DB8A1] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <Icon className="w-8 h-8 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-gray-800 mb-4">{title}</h3>
           <p className="text-gray-600 leading-relaxed">{description}</p>
-          <div className="mt-6 flex items-center text-green-600 font-semibold group-hover:gap-3 transition-all">
+          <div className="mt-6 flex items-center text-[#65CCB8] font-semibold group-hover:gap-3 transition-all">
             Learn More
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
           </div>
@@ -82,10 +83,10 @@ const StatCard = ({ icon: Icon, value, label, delay = 0 }) => {
       className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-6 text-center hover:bg-white/20 transition-all border border-white/20"
     >
       <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center mx-auto mb-4 shadow-md">
-        <Icon className="w-7 h-7 text-green-600" />
+        <Icon className="w-7 h-7 text-[#65CCB8]" />
       </div>
       <h3 className="text-4xl font-bold text-white mb-2">{value}</h3>
-      <p className="text-green-50 font-medium">{label}</p>
+      <p className="text-white/90 font-medium">{label}</p>
     </motion.div>
   );
 };
@@ -98,10 +99,10 @@ const TestimonialCard = ({ name, location, quote, delay = 0 }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-500"
+      className="bg-[#FAFAFA] rounded-xl shadow-md p-6 border-l-4 border-[#65CCB8]"
     >
       <div className="flex items-center mb-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+        <div className="w-12 h-12 bg-gradient-to-br from-[#65CCB8] to-[#4DB8A1] rounded-full flex items-center justify-center">
           <span className="text-white font-bold text-lg">{name[0]}</span>
         </div>
         <div className="ml-4">
@@ -130,12 +131,15 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden relative">
+      {/* Farming Animation */}
+      <FarmingAnimation />
+      
       {/* Hero Section */}
       <motion.section
         ref={heroRef}
         style={{ opacity, y }}
-        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-600 via-green-500 to-green-700 overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#65CCB8] via-[#4DB8A1] to-[#65CCB8] overflow-hidden"
       >
         {/* Background Image Overlay */}
         <div 
@@ -185,7 +189,7 @@ export default function Home() {
             >
               <Link
                 to="/dashboard"
-                className="inline-flex items-center gap-3 bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-green-300/50 hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-white text-[#65CCB8] px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-[#FFD86A] hover:text-white hover:scale-105 transition-all duration-300"
               >
                 Get Started
                 <ArrowRight className="w-6 h-6" />
@@ -265,7 +269,7 @@ export default function Home() {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#65CCB8] to-[#4DB8A1] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -277,7 +281,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Trusted by Farmers Nationwide
             </h2>
-            <p className="text-xl text-green-100 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Real results from real farmers
             </p>
           </motion.div>
@@ -353,7 +357,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 via-green-500 to-green-700">
+      <section className="py-20 bg-gradient-to-br from-[#65CCB8] via-[#4DB8A1] to-[#65CCB8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -364,12 +368,12 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Transform Your Farming?
             </h2>
-            <p className="text-xl text-green-50 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Join thousands of farmers who are already using AI to make smarter decisions and boost their yields.
             </p>
             <Link
               to="/dashboard"
-              className="inline-flex items-center gap-3 bg-white text-green-600 px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:shadow-green-300/50 hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-3 bg-white text-[#65CCB8] px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:bg-[#FFD86A] hover:text-white hover:scale-105 transition-all duration-300"
             >
               Start Free Trial
               <ArrowRight className="w-6 h-6" />

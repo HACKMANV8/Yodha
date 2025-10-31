@@ -15,7 +15,7 @@ function AppContent() {
   const hideNavAndFooter = location.pathname === '/login' || location.pathname === '/signup';
 
   return (
-    <div className={`min-h-screen flex flex-col ${hideNavAndFooter ? '' : 'bg-gradient-to-br from-green-50 to-blue-50'} overflow-x-hidden`}>
+    <div className={`min-h-screen flex flex-col ${hideNavAndFooter ? '' : 'bg-[#FAFAFA]'} overflow-x-hidden`}>
       {!hideNavAndFooter && <Navbar />}
       <main className="flex-grow w-full max-w-full overflow-x-hidden">
         <Routes>
