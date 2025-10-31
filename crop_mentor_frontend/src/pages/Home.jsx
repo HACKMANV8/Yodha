@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import FarmingAnimation from '../components/FarmingAnimation';
+import AnimatedShapes from '../components/AnimatedShapes';
+import WaveDivider from '../components/WaveDivider';
 import { 
   Sprout, 
   DollarSign, 
@@ -357,27 +359,56 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#65CCB8] via-[#4DB8A1] to-[#65CCB8]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-24 bg-gradient-to-br from-[#65CCB8] via-[#86D9B8] to-[#A8FFCE] overflow-hidden">
+        {/* Animated Background Shapes */}
+        <AnimatedShapes />
+        
+        {/* Wave Divider */}
+        <WaveDivider />
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Ready to Transform Your Farming?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/95 mb-10 max-w-2xl mx-auto font-medium">
               Join thousands of farmers who are already using AI to make smarter decisions and boost their yields.
             </p>
-            <Link
-              to="/dashboard"
-              className="inline-flex items-center gap-3 bg-white text-[#65CCB8] px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:bg-[#FFD86A] hover:text-white hover:scale-105 transition-all duration-300"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Start Free Trial
-              <ArrowRight className="w-6 h-6" />
-            </Link>
+              <Link
+                to="/dashboard"
+                className="relative inline-flex items-center gap-3 bg-gradient-to-r from-white to-white text-[#65CCB8] px-12 py-6 rounded-full font-bold text-xl shadow-2xl hover:shadow-white/50 transition-all duration-500 overflow-hidden group"
+              >
+                {/* Animated Gradient Background on Hover */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-[#FFD86A] via-[#FFCC33] to-[#FFD86A] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    backgroundSize: '200% 100%',
+                  }}
+                  animate={{
+                    backgroundPosition: ['0% 0%', '200% 0%'],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: 'loop',
+                    ease: 'linear'
+                  }}
+                />
+                <span className="relative z-10 text-[#65CCB8] group-hover:text-white transition-colors duration-300">
+                  Start Free Trial
+                </span>
+                <ArrowRight className="w-6 h-6 relative z-10 text-[#65CCB8] group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
