@@ -1,12 +1,14 @@
 from pydantic import BaseModel
+from typing import Optional
 
-class CropRequest(BaseModel):
-    crop_name: str | None = None
-    recommended_crop: str | None = None
-    N: float | None = None
-    P: float | None = None
-    K: float | None = None
-    temperature: float | None = None
-    humidity: float | None = None
-    ph: float | None = None
-    rainfall: float | None = None
+class FertilizerRequest(BaseModel):
+    crop_name: Optional[str] = None
+    soil_type: Optional[str] = None
+    temperature: float
+    humidity: float
+    ph: float
+    rainfall: float
+
+class FertilizerResponse(BaseModel):
+    status: str
+    recommendation: dict

@@ -8,6 +8,40 @@
     "profile": "Profile",
     "admin": "Admin",
     "subtitle": "Smart Agriculture Assistant"
+  },
+  "risk": {
+    "assessment": {
+      "form": {
+        "title": "Risk Assessment Form"
+      },
+      "analyze": "Analyze Risk",
+      "result": {
+        "title": "Risk Assessment Results",
+        "yield": "Predicted Yield",
+        "profit": "Profit Potential",
+        "price": "Market Price Prediction",
+        "risk": "Overall Risk Assessment",
+        "recommendations": "Recommendations"
+      }
+    }
+  },
+  "crop": {
+    "name": "Crop Name"
+  },
+  "soil": {
+    "type": "Soil Type"
+  },
+  "temperature": "Temperature",
+  "humidity": "Humidity",
+  "rainfall": "Rainfall",
+  "ph": "pH Level",
+  "nitrogen": "Nitrogen (N)",
+  "phosphorus": "Phosphorus (P)",
+  "potassium": "Potassium (K)",
+  "state": "State",
+  "district": "District",
+  "validation": {
+    "required": "This field is required"
   }
 }
 

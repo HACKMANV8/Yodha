@@ -8,6 +8,50 @@
     "profile": "प्रोफ़ाइल",
     "admin": "एडमिन",
     "subtitle": "स्मार्ट कृषि सहायक"
+  },
+  "risk": {
+    "assessment": {
+      "form": {
+        "title": "जोखिम मूल्यांकन फॉर्म"
+      },
+      "analyze": "जोखिम का विश्लेषण करें",
+      "result": {
+        "title": "जोखिम मूल्यांकन परिणाम",
+        "yield": "अनुमानित उपज",
+        "profit": "लाभ की संभावना",
+        "price": "बाजार मूल्य पूर्वानुमान",
+        "risk": "समग्र जोखिम मूल्यांकन",
+        "recommendations": "सिफारिशें"
+      }
+    }
+  },
+  "weather": {
+    "forecast": "मौसम का पूर्वानुमान",
+    "maxTemp": "अधिकतम तापमान",
+    "minTemp": "न्यूनतम तापमान",
+    "rainfall": "वर्षा",
+    "humidity": "नमी",
+    "temperatureChart": "तापमान पूर्वानुमान",
+    "rainfallHumidityChart": "वर्षा और नमी पूर्वानुमान",
+    "rainfallUnit": "वर्षा (मिमी)"
+  },
+  "crop": {
+    "name": "फसल का नाम"
+  },
+  "soil": {
+    "type": "मिट्टी का प्रकार"
+  },
+  "temperature": "तापमान",
+  "humidity": "नमी",
+  "rainfall": "वर्षा",
+  "ph": "पीएच स्तर",
+  "nitrogen": "नाइट्रोजन (N)",
+  "phosphorus": "फास्फोरस (P)",
+  "potassium": "पोटैशियम (K)",
+  "state": "राज्य",
+  "district": "जिला",
+  "validation": {
+    "required": "यह फ़ील्ड आवश्यक है"
   }
 }
 

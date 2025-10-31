@@ -20,3 +20,5 @@ xgboost
 apscheduler
 requests
 python-dateutil
+
+python-multipart
