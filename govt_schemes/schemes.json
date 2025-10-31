@@ -1,0 +1,98 @@
+[
+  {
+    "crop": "Maize",
+    "scheme_name": "Maize Development through Cluster Approach Scheme",
+    "state": "All",
+    "benefit": "Support for high-yielding hybrid maize seed distribution and cluster development.",
+    "eligibility": "Maize growers in cluster areas.",
+    "official_link": "https://www.myscheme.gov.in/schemes/mdcas"
+  },
+  {
+    "crop": "Tobacco",
+    "scheme_name": "Tobacco Board Cultivation Incentive Scheme",
+    "state": "Andhra Pradesh, Telangana, Karnataka",
+    "benefit": "Incentives for registered tobacco grower cultivators for inputs and better quality yield.",
+    "eligibility": "Registered tobacco growers under Tobacco Board.",
+    "official_link": "https://tobaccoboard.gov.in"
+  },
+  {
+    "crop": "Coffee",
+    "scheme_name": "Coffee Plantation Development Scheme",
+    "state": "Karnataka, Kerala, Tamil Nadu",
+    "benefit": "Subsidy for rejuvenation of old coffee plantations, new plantings and upgradation.",
+    "eligibility": "Coffee growers under Cooperatives and registered estates.",
+    "official_link": "https://indiacoffee.org"
+  },
+  {
+    "crop": "Barley",
+    "scheme_name": "Coarse Cereals Production Incentive Scheme",
+    "state": "Himachal Pradesh, Uttarakhand, Jammu & Kashmir",
+    "benefit": "Encouragement to barley growers via input subsidies and procurement guarantee.",
+    "eligibility": "Barley farmers in designated hill states.",
+    "official_link": "https://agri.nic.in"
+  },
+  {
+    "crop": "Cotton",
+    "scheme_name": "Mission for Cotton Productivity",
+    "state": "All cotton-growing states",
+    "benefit": "Focus on high-yielding hybrid seeds, better cotton fibre quality and farmer support.",
+    "eligibility": "Cotton growers registered with state agriculture dept.",
+    "official_link": "https://impriindia.com/insights/mission-for-cotton-productivity-2025/"
+  },
+  {
+    "crop": "Wheat",
+    "scheme_name": "Rashtriya Krishi Vikas Yojana – Wheat Component",
+    "state": "Punjab, Haryana, Uttar Pradesh",
+    "benefit": "Subsidy for seed-treatment, certified seeds and production support for wheat.",
+    "eligibility": "Wheat farmers in designated states.",
+    "official_link": "https://rkvy.nic.in"
+  },
+  {
+    "crop": "Jute",
+    "scheme_name": "Incentive Scheme for Acquisition of Plant & Machinery (Jute)",
+    "state": "West Bengal, Bihar, Assam",
+    "benefit": "Capital subsidy for jute mills and Jute Diversified Products units for machinery up-gradation. :contentReference[oaicite:0]{index=0}",
+    "eligibility": "Jute industry units; jute growers for certain components.",
+    "official_link": "https://texmin.nic.in/sites/default/files/Textiles_NERTPS_Guidelines.pdf"
+  },
+  {
+    "crop": "Tea",
+    "scheme_name": "Tea Development & Promotion Scheme",
+    "state": "Assam, West Bengal, Tamil Nadu",
+    "benefit": "Financial assistance for small tea growers, plantation development, quality up-gradation and market promotion. :contentReference[oaicite:1]{index=1}",
+    "eligibility": "Small tea growers registered with Tea Board of India.",
+    "official_link": "https://schemes.vikaspedia.in/viewcontent/schemesall/schemes-for-farmers/tea-development-promotion-scheme?lgn=en"
+  },
+  {
+    "crop": "Pulses",
+    "scheme_name": "Pulse Production Short-Term Scheme",
+    "state": "Madhya Pradesh, Maharashtra, Rajasthan",
+    "benefit": "Incentives to boost pulses production including input subsidy and procurement guarantee. :contentReference[oaicite:3]{index=3}",
+    "eligibility": "Farmers growing specified pulses in target states.",
+    "official_link": "https://www.icar.org.in"
+  },
+  {
+    "crop": "Rice",
+    "scheme_name": "National Food Security Mission – Rice Component",
+    "state": "All major rice-growing states",
+    "benefit": "Subsidy on certified seeds, micronutrients and machinery for rice cultivation.",
+    "eligibility": "Registered rice cultivators under NFSM scheme.",
+    "official_link": "https://www.mofpi.gov.in"
+  },
+  {
+    "crop": "Sugarcane",
+    "scheme_name": "Sugarcane Development Scheme",
+    "state": "Uttar Pradesh, Maharashtra, Karnataka",
+    "benefit": "Subsidy for nursery development, improved varieties and pest & disease control for sugarcane. :contentReference[oaicite:4]{index=4}",
+    "eligibility": "Sugarcane growers in designated zones.",
+    "official_link": "https://www.myscheme.gov.in/schemes/sdsuk"
+  },
+  {
+    "crop": "Millet",
+    "scheme_name": "Millets Mission Incentive Scheme",
+    "state": "Rajasthan, Karnataka, Maharashtra",
+    "benefit": "Incentive to promote millet cultivation, input support and marketing linkages.",
+    "eligibility": "Farmers cultivating millets in target states.",
+    "official_link": "https://agricoop.gov.in"
+  }
+]
