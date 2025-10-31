@@ -2,10 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
-from app.api import routes_crop, routes_price
+from app.api import routes_crop, routes_price, routes_fertilizer
 from app.core.db import init_db
 from app.core.firebase_utils import init_firebase
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
@@ -23,6 +22,7 @@ app = FastAPI(
 # Include routers
 app.include_router(routes_crop.router, prefix="", tags=["Crop Recommendation"])
 app.include_router(routes_price.router, prefix="", tags=["Price Prediction"])
+app.include_router(routes_fertilizer.router, prefix="", tags=["Fertilizer Recommendation"])
 
 # CORS Middleware
 origins = ["*"]

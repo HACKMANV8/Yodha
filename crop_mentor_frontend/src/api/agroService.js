@@ -172,6 +172,18 @@ export const getWeatherData = async (location = 'default') => {
   }
 };
 
+
+export const getFertilizerRecommendation = async (payload) => {
+  const res = await fetch(`${BASE_URL}/get_fertilizer`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error("Failed to fetch fertilizer recommendation");
+  return res.json();
+};
+
+
 /**
  * Get IoT sensor data (if endpoint exists)
  * @param {string} sensorId - Sensor ID
