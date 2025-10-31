@@ -1,0 +1,7 @@
+.env
+firebase_key.json
+trained_model.pkl
+price_model.pkl
+*.pkl
+
+*.json
