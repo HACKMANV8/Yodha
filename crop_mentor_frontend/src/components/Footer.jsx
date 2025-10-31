@@ -6,8 +6,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-r from-green-800 to-green-700 text-white mt-12">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+    <footer className="bg-gradient-to-r from-green-800 to-green-700 text-white mt-12 w-full overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-6 py-12 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
           <div>

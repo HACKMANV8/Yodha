@@ -69,7 +69,7 @@ export default function PricePrediction() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 space-y-6">
+    <div className="max-w-6xl mx-auto p-6 space-y-6 w-full overflow-x-hidden">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Price Prediction</h1>
         <p className="text-gray-600">Get AI-powered price predictions for your crops</p>

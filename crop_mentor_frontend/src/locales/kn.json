@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "cropRec": "ಬೆಳೆ ಶಿಫಾರಸು",
+    "fertilizerProfit": "ಗೊಬ್ಬರ ಮತ್ತು ಲಾಭ",
+    "iotMonitoring": "IoT ಮಾನಿಟರಿಂಗ್",
+    "voiceBuddy": "ವಾಯ್ಸ್ ಬಡ್ಡಿ",
+    "profile": "ಪ್ರೊಫೈಲ್",
+    "admin": "ಅಡ್ಮಿನ್",
+    "subtitle": "ಸ್ಮಾರ್ಟ್ ಕೃಷಿ ಸಹಾಯಕ"
+  }
+}
+

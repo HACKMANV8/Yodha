@@ -1,6 +1,17 @@
 /* src/index.css */
 @import "tailwindcss";
 
+/* Prevent horizontal scrolling */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 /* Theme Variables */
 @layer base {
   :root {

@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "dashboard": "డాష్బోర్డ్",
+    "cropRec": "పంట సిఫార్సు",
+    "fertilizerProfit": "ఎరువు మరియు లాభం",
+    "iotMonitoring": "IoT మానిటరింగ్",
+    "voiceBuddy": "వాయిస్ బడ్డీ",
+    "profile": "ప్రొఫైల్",
+    "admin": "అడ్మిన్",
+    "subtitle": "స్మార్ట్ వ్యవసాయ అసిస్టెంట్"
+  }
+}
+

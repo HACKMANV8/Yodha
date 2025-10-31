@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "dashboard": "Dashboard",
+    "cropRec": "Crop Recommendation",
+    "fertilizerProfit": "Fertilizer & Profit",
+    "iotMonitoring": "IoT Monitoring",
+    "voiceBuddy": "Voice Buddy",
+    "profile": "Profile",
+    "admin": "Admin",
+    "subtitle": "Smart Agriculture Assistant"
+  }
+}
+

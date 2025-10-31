@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "dashboard": "டாஷ்போர்டு",
+    "cropRec": "பயிர் பரிந்துரை",
+    "fertilizerProfit": "உரம் மற்றும் லாபம்",
+    "iotMonitoring": "IoT மானிட்டரிங்",
+    "voiceBuddy": "வாய்ஸ் படி",
+    "profile": "சுயவிவரம்",
+    "admin": "நிர்வாகம்",
+    "subtitle": "ஸ்மார்ட் விவசாய உதவியாளர்"
+  }
+}
+

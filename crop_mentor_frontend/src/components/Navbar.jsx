@@ -9,7 +9,7 @@ export default function Navbar() {
   const { t, i18n } = useTranslation();
 
   const navLinks = [
-    { path: '/', label: t('navbar.dashboard'), icon: Home },
+    { path: '/dashboard', label: t('navbar.dashboard'), icon: Home },
     { path: '/crop-recommendation', label: t('navbar.cropRec'), icon: Sprout },
     { path: '/fertilizer-profit', label: t('navbar.fertilizerProfit'), icon: DollarSign },
     { path: '/iot-monitoring', label: t('navbar.iotMonitoring'), icon: Radio },
@@ -25,9 +25,9 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-green-700 to-green-600 shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="bg-gradient-to-r from-green-700 to-green-600 shadow-lg sticky top-0 z-50 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex justify-between items-center h-16 w-full">
           {/* Logo & Brand */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -40,7 +40,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const active = isActive(link.path);
@@ -66,12 +66,15 @@ export default function Navbar() {
               <div className="flex items-center bg-white text-green-700 px-2 py-1 rounded-lg">
                 <Globe className="w-4 h-4 mr-1" />
                 <select
+                  value={i18n.language}
                   onChange={(e) => changeLanguage(e.target.value)}
-                  className="bg-transparent text-sm font-medium focus:outline-none"
+                  className="bg-transparent text-sm font-medium focus:outline-none cursor-pointer"
                 >
-                  <option value="en">🇬🇧 EN</option>
-                  <option value="te">🇮🇳 TE</option>
-                  <option value="hi">🇮🇳 HI</option>
+                  <option value="en">🇬🇧 English</option>
+                  <option value="te">🇮🇳 తెలుగు</option>
+                  <option value="hi">🇮🇳 हिंदी</option>
+                  <option value="ta">🇮🇳 தமிழ்</option>
+                  <option value="kn">🇮🇳 ಕನ್ನಡ</option>
                 </select>
               </div>
             </div>
@@ -115,12 +118,15 @@ export default function Navbar() {
               <div className="flex items-center bg-white text-green-700 px-3 py-2 rounded-lg">
                 <Globe className="w-5 h-5 mr-2" />
                 <select
+                  value={i18n.language}
                   onChange={(e) => changeLanguage(e.target.value)}
-                  className="bg-transparent text-sm font-medium focus:outline-none"
+                  className="bg-transparent text-sm font-medium focus:outline-none cursor-pointer w-full"
                 >
-                  <option value="en">🇬🇧 EN</option>
-                  <option value="te">🇮🇳 TE</option>
-                  <option value="hi">🇮🇳 HI</option>
+                  <option value="en">🇬🇧 English</option>
+                  <option value="te">🇮🇳 తెలుగు</option>
+                  <option value="hi">🇮🇳 हिंदी</option>
+                  <option value="ta">🇮🇳 தமிழ்</option>
+                  <option value="kn">🇮🇳 ಕನ್ನಡ</option>
                 </select>
               </div>
             </div>

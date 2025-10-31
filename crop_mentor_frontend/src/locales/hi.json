@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "dashboard": "डैशबोर्ड",
+    "cropRec": "फसल सिफारिश",
+    "fertilizerProfit": "उर्वरक और लाभ",
+    "iotMonitoring": "IoT मॉनिटरिंग",
+    "voiceBuddy": "वॉइस बडी",
+    "profile": "प्रोफ़ाइल",
+    "admin": "एडमिन",
+    "subtitle": "स्मार्ट कृषि सहायक"
+  }
+}
+
