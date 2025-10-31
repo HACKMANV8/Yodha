@@ -35,6 +35,23 @@ const Input = ({ label, ...props }) => (
   </div>
 );
 
+const Select = ({ label, options, ...props }) => (
+  <div className="flex flex-col">
+    <label className="text-sm font-medium text-gray-700 mb-2">{label}</label>
+    <select
+      className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all bg-white"
+      {...props}
+    >
+      <option value="">Select soil type...</option>
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </select>
+  </div>
+);
+
 const Button = ({ children, disabled, className = "", onClick }) => (
   <button
     disabled={disabled}
@@ -59,8 +76,20 @@ export default function CropRecommendation() {
     ph: '6.5',
     humidity: '68',
     temperature: '28',
-    rainfall: '120'
+    rainfall: '120',
+    soilType: ''
   });
+
+  const [showCustomSoilType, setShowCustomSoilType] = useState(false);
+
+  const soilTypes = [
+    { value: 'sandy', label: 'Sandy' },
+    { value: 'clay', label: 'Clay' },
+    { value: 'loam', label: 'Loam' },
+    { value: 'silt', label: 'Silt' },
+    { value: 'peat', label: 'Peat' },
+    { value: 'other', label: 'Other (specify)' }
+  ];
 
   useEffect(() => {
     loadAllRecords();
@@ -88,7 +117,8 @@ export default function CropRecommendation() {
         temperature: parseFloat(formData.temperature),
         humidity: parseFloat(formData.humidity),
         ph: parseFloat(formData.ph),
-        rainfall: parseFloat(formData.rainfall)
+        rainfall: parseFloat(formData.rainfall),
+        soilType: formData.soilType
       };
 
       const result = await addCropData(payload);
@@ -96,12 +126,14 @@ export default function CropRecommendation() {
       // Create recommendations based on backend response
       const primaryCrop = result.recommended_crop || result.predicted_crop || 'Rice';
       
+      const soilTypeText = payload.soilType ? `${payload.soilType.charAt(0).toUpperCase() + payload.soilType.slice(1)} soil` : '';
+      
       const recs = [
         {
           name: primaryCrop,
           badge: 'Best Match',
           score: 95,
-          description: `Excellent fit for your soil's NPK levels (N:${payload.N}, P:${payload.P}, K:${payload.K}) and moisture content. Expected yield: 4.2 tons/hectare`,
+          description: `Excellent fit for your soil's NPK levels (N:${payload.N}, P:${payload.P}, K:${payload.K})${soilTypeText ? ` and ${soilTypeText} type` : ''}. Expected yield: 4.2 tons/hectare`,
           bgColor: 'bg-green-100',
           borderColor: 'border-green-300',
           badgeBg: 'bg-green-600'
@@ -110,7 +142,7 @@ export default function CropRecommendation() {
           name: primaryCrop === 'Rice' ? 'Wheat' : 'Rice',
           badge: 'Good Match',
           score: 87,
-          description: `Well-suited for current conditions (pH:${payload.ph}, Temp:${payload.temperature}°C). High market demand. Expected yield: 3.8 tons/hectare`,
+          description: `Well-suited for current conditions (pH:${payload.ph}, Temp:${payload.temperature}°C)${soilTypeText ? ` with ${soilTypeText}` : ''}. High market demand. Expected yield: 3.8 tons/hectare`,
           bgColor: 'bg-teal-100',
           borderColor: 'border-teal-300',
           badgeBg: 'bg-teal-600'
@@ -119,7 +151,7 @@ export default function CropRecommendation() {
           name: 'Maize',
           badge: 'Suitable',
           score: 78,
-          description: `Moderate fit for rainfall ${payload.rainfall}mm. Consider adjusting pH levels for better results. Expected yield: 3.2 tons/hectare`,
+          description: `Moderate fit for rainfall ${payload.rainfall}mm${soilTypeText ? ` with ${soilTypeText}` : ''}. Consider adjusting pH levels for better results. Expected yield: 3.2 tons/hectare`,
           bgColor: 'bg-cyan-100',
           borderColor: 'border-cyan-300',
           badgeBg: 'bg-cyan-600'
@@ -163,12 +195,25 @@ export default function CropRecommendation() {
     } else {
       insights.push(`Monitor irrigation - humidity is at ${data.humidity}%`);
     }
+
+    if (data.soilType) {
+      const soilTypeCapitalized = data.soilType.charAt(0).toUpperCase() + data.soilType.slice(1);
+      insights.push(`${soilTypeCapitalized} soil is well-suited for ${crop} cultivation`);
+    }
     
     return insights;
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (e.target.name === 'soilType' && e.target.value === 'other') {
+      setShowCustomSoilType(true);
+      setFormData({ ...formData, soilType: '' });
+    } else if (e.target.name === 'soilType' && e.target.value !== 'other') {
+      setShowCustomSoilType(false);
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
   };
 
   const filteredRecords = allRecords.filter(record => {
@@ -262,15 +307,39 @@ export default function CropRecommendation() {
               />
             </div>
 
-            <Input
-              label="Average Rainfall (mm)"
-              type="number"
-              name="rainfall"
-              placeholder="0-500"
-              value={formData.rainfall}
-              onChange={handleChange}
-              required
-            />
+            <div className="grid grid-cols-2 gap-4">
+              <Input
+                label="Average Rainfall (mm)"
+                type="number"
+                name="rainfall"
+                placeholder="0-500"
+                value={formData.rainfall}
+                onChange={handleChange}
+                required
+              />
+              <div className="flex flex-col">
+                <Select
+                  label="Soil Type"
+                  name="soilType"
+                  value={showCustomSoilType ? 'other' : formData.soilType}
+                  onChange={handleChange}
+                  options={soilTypes}
+                  required={!showCustomSoilType}
+                />
+              </div>
+            </div>
+
+            {showCustomSoilType && (
+              <Input
+                label="Custom Soil Type"
+                type="text"
+                name="soilType"
+                placeholder="Enter your soil type (e.g., sandy loam, clay loam)"
+                value={formData.soilType}
+                onChange={handleChange}
+                required
+              />
+            )}
 
             <Button disabled={isAnalyzing} onClick={handleSubmit}>
               {isAnalyzing ? (
